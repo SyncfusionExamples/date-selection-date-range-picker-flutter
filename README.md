@@ -53,3 +53,8 @@ void selectionChanged(DateRangePickerSelectionChangedArgs args) {
   });
 }
 ```
+**[View document in Syncfusion Flutter Knowledge base](https://www.syncfusion.com/kb/11410/how-to-get-the-selected-date-from-the-date-range-picker-sfdaterangepicker)**
+
+**Screenshots**
+
+![Selected date details](http://www.syncfusion.com/uploads/user/kb/flut/flut-892/flut-892_img1.png)
