@@ -57,4 +57,4 @@ void selectionChanged(DateRangePickerSelectionChangedArgs args) {
 
 **Screenshots**
 
-![Selected date details](http://www.syncfusion.com/uploads/user/kb/flut/flut-892/flut-892_img1.png)
+<img alt="Selected date details" src="http://www.syncfusion.com/uploads/user/kb/flut/flut-892/flut-892_img1.png" width="250" height="250" />|
