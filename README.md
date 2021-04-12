@@ -4,21 +4,11 @@
 In the flutter date range picker, you can get the selected date of the date range picker using the `onSelectionChanged` callback.
 
 ## Step 1:
-In initState(), set the default values for the selected date.
+Inside the state, set the default values for the selected date.
 
 ```xml
-DateRangePickerController _controller;
-DateTime _selectedDate;
-String _date;
-@override
-void initState() {
-  // TODO: implement initState
-  _controller = DateRangePickerController();
-  _selectedDate=DateTime.now();
-  date=  DateFormat('dd, MMMM yyyy')
-      .format(DateTime.now()).toString();
-  super.initState();
-}
+final DateRangePickerController _controller = DateRangePickerController();
+String _date = DateFormat('dd, MMMM yyyy').format(DateTime.now()).toString();
 ```
 
 ## Step 2:
@@ -32,8 +22,9 @@ body: Column(
     Card(
       margin: const EdgeInsets.fromLTRB(50, 50, 50, 100),
       child: SfDateRangePicker(
+        controller: _controller,
+        initialSelectedDate: DateTime.now(),
         view: DateRangePickerView.month,
-        selectionMode: DateRangePickerSelectionMode.single,
         onSelectionChanged: selectionChanged,
       ),
     )
@@ -46,10 +37,10 @@ Using the `selectionChanged` event, you can get the selected date of the picker.
 
 ```xml
 void selectionChanged(DateRangePickerSelectionChangedArgs args) {
-  _date=DateFormat('dd, MMMM yyyy')
-      .format(args.value).toString();
-  SchedulerBinding.instance.addPostFrameCallback((duration) {
-    setState(() {});
+  SchedulerBinding.instance!.addPostFrameCallback((duration) {
+    setState(() {
+       _date=DateFormat('dd, MMMM yyyy').format(args.value).toString();
+    });
   });
 }
 ```
